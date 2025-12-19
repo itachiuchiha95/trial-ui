@@ -38,6 +38,18 @@ def login_page():
         else:
             st.error("Invalid username or password")
 
+def dashboard_page():
+    st.success("Welcome! You are logged in 🎉")
+
+    st.write("This is your dashboard.")
+
+    if st.button("Go to Settings"):
+        st.session_state.page = "settings"
+        st.rerun()
+
+    if st.button("Log out"):
+        logout()
+
 st.set_page_config(
     page_title="Trial UI",
     page_icon="🔐",
